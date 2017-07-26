@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="jumbotron text-center">
+  <h1>Flask</h1>
+  <p class="lead">Flask is a microframework for Python based on Werkzeug, Jinja 2 and good intentions. And before you ask: It's BSD licensed! </p>
+   {% if session.logged_in == NULL %}
+     <a href="/register" class="btn btn-default btn-lg">Register</a>
+     <a href="/login" class="btn btn-primary btn-lg">Log In</a>
+   {% endif %}
+
+</div>
+
+{% endblock %}

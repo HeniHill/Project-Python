@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+ <h1>Dashboard <small>welcome {{session.username}}</small></h1>
+ <a class="btn btn-success" href="/add_article"> Add Article</a>
+<hr>
+ <table class="table table-striped">
+   <tr>
+     <th>Id</th>
+     <th>Title</th>
+     <th>Author</th>
+     <th>Date</th>
+     <th></th>
+     <th></th>
+   </tr>
+   {% for article in articles %}
+       <tr>
+         <td>{{article.id}}</td>
+         <td>{{article.title}}</td>
+         <td>{{article.author}}</td>
+         <td>{{article.create_date}}</td>
+         <td><a href="edir_artice/{{article.id}}" class="btn btn-default pullright">Edit</a></td>
+         <td><a href="#" class="btn btn-danger pullright">Delete</a></td>
+       </tr>
+   {% endfor %}
+ </table>
+{% endblock %}
